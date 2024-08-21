@@ -31,7 +31,8 @@ api_get_keys = 'https://sshservice.cscs.ch/api/v1/auth/ssh-keys/signed-key'
 
 #Methods:
 def get_user_credentials():
-    user = input("Username: ")
+    # user = input("Username: ")
+    user = 'aglensk'
     pwd = getpass.getpass()
     otp = getpass.getpass("Enter OTP (6-digit code):")
     if not (re.match('^\d{6}$', otp)):
@@ -116,7 +117,8 @@ def main():
     bar.next()
     time.sleep(1)
     bar.finish()
-    if (set_passphrase()):
+    # if (set_passphrase()):
+    if (False):
         substrg = ", using the passphrase you have set:"
     else:
         substrg = ":"
@@ -134,7 +136,7 @@ Note - if the key is not added to the SSH agent as mentioned in the step-1 above
 ssh -i ~/.ssh/cscs-key <CSCS-LOGIN-NODE>
 
 """
-    print(message)
+    # print(message)
 
 if __name__ == "__main__":
     main()
